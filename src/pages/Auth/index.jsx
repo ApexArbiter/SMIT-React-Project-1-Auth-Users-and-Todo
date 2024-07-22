@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import ForgetPassward from "./ForgetPassward";
 import Login from "./Login";
 import Register from "./Register";
-import video from "../../assets/video/auth-video.mp4";
+import video from "../../assets/video/auth-video1.mp4";
 
 function Auth() {
   return (

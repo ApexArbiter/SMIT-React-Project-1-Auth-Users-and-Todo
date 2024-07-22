@@ -10,12 +10,14 @@ function index() {
   return (
     <>
       <Nav />
-      <Routes>
+<div className="main">
+<Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="*" element={<h1>Page not</h1>} />
       </Routes>
+</div>
       <Footer />
     </>
   );
