@@ -9,7 +9,7 @@ function Index() {
   return (
     <>
       <Nav />
-      <div className="main">
+      <div className="main gradient">
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="users" element={<Users />} />

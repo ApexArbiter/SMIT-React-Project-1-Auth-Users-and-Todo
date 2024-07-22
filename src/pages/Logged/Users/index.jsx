@@ -1,6 +1,7 @@
 import React from "react";
 
-function Index() {
+function Users() {
+  let users = []
   return (
     <>
     <div className="registered-users">
@@ -30,4 +31,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Users;

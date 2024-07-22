@@ -83,9 +83,26 @@
 
 
 //
+.gradient{
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
 
+.card1 {
+    font-family: 'Playwrite CU', cursive;
+    font-size: 20px;
+    color: white;
+    padding: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    cursor: pointer;
+    transition-duration: 7s;
+   
 
-// 
+}
+
+.card1:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 
 
 @media (max-width: 768px) {
@@ -101,3 +118,4 @@
         padding: 15px;
     }
 }
+
