@@ -14,10 +14,7 @@ function Register() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setUserData((prevData) => ({...prevData,[e.target.name]: e.target.value,}));
   };
 
   const handleSubmit = (e) => {
@@ -65,6 +62,7 @@ function Register() {
               className="w-100 mb-1"
               label="Email"
               name="email"
+              // value={"Mahad"}
               // value={userData.email}
               onChange={handleChange}
             />
@@ -77,7 +75,6 @@ function Register() {
               label="Password"
               name="password"
               type="password"
-              // value={userData.password}
               onChange={handleChange}
             />
             <LockIcon className="auth-icon" />

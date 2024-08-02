@@ -1,66 +1,59 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+
 export default function Nav() {
+  const { loggedIn, setLoggedIn, username } = useContext(AuthContext);
+
+  const handleLoginClick = () => {
+    setLoggedIn(true);
+  };
+
+  const handleLogoutClick = () => {
+    setLoggedIn(false);
+  };
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light  bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-light bg-primary d-flex align-items-center justify-content-between ">
         <Link to="/" className="navbar-brand">
-          Basic React
+          Rynexi
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <Link className="nav-link" to="/">
-                Home <span className="sr-only">(current)</span>
+                Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="contact">
+              <Link className="nav-link" to="/contact">
                 Contact
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="about">
+              <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="blog">
-                Blog
-              </Link>
-            </li>
-            <li className="nav-item dropdown">
-              <button
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Auth
-              </button>
-
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <link to></link>
-                <Link className="dropdown-item" to="/auth/login">
-                  Login
-                </Link>
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="/auth/register">
-                  Register
-                </Link>
-              </div>
-            </li>
           </ul>
+        </div>
+        <div className=" ">
+          <p className="text-light ">
+            {loggedIn ? `Hello, ${username}` : ""}
+          </p>
+          
+          {loggedIn ? (
+            <button onClick={handleLogoutClick} className="btn btn-danger">
+              Logout
+            </button>
+          ) : (
+            <button onClick={handleLoginClick} className="btn btn-success">
+              Login
+            </button>
+          )}
+          
         </div>
       </nav>
     </>
